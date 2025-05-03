@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Person Form</title>
+</head>
+
+<body>
+
+	<form action="/" method="post" th:object="${personForm}">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" th:field="*{name}"></td>
+				<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+			</tr>
+			<tr>
+				<td>Age:</td>
+				<td><input type="text" th:field="*{age}"></td>
+				<td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
+			</tr>
+		</table>
+		<td><button>Submit</button></td>
+	</form>
+
+</body>
+
+</html>
